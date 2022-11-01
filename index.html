@@ -1,0 +1,33 @@
+<!--
+File: index.html
+GUI Assignment: Creating a dynamic multiplacation table
+Clifton Landry, UMass Lowell Computer Science, clifton_landry@student.uml.edu
+What to submit: zipped folder containing all of the necessary files to run my single page website
+Copyright (c) 2022 by Landry. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by CL on October 31, 2022 at 3:30 PM
+-->
+<html>
+<head>
+    <title>Multiplacation Table</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <h2>Generate Tables</h2>
+    <h3>Please enter an integer between -50 to 50 (inclusive)</h3>
+    <label>Minimum Column Value</label>
+    <input type="number" id="minCol" />
+    <label>Maximum Column Value</label>
+    <input type="number" id="maxCol" />
+    <label>Minimum Row Value</label>
+    <input type="number" id="minRow" />
+    <label>Maximum Row Value</label>
+    <input type="number" id="maxRow" />
+    <input type="button" value="generate" onclick="multiplicationTable()" />
+    <br />
+    <div id="error"></div>
+    <br /><br />
+    <div id="result"></div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
