@@ -5,11 +5,16 @@ function multiplicationTable() {
     var maxCol = document.getElementById("maxCol").value;
     var minRow = document.getElementById("minRow").value;
     var maxRow = document.getElementById("maxRow").value;
+    var noBlankValuesCheck = (minCol == null) || (minCol == "") || (maxCol == null) || (maxCol == "") || (minRow == null) || (minRow == "") || (maxRow == null) || (maxRow == "");
     var intCheck = (((minCol - Math.floor(minCol)) !== 0) || ((maxCol - Math.floor(maxCol)) !== 0) || ((minRow - Math.floor(minRow)) !== 0) || ((maxRow - Math.floor(maxRow)) !== 0));
     var inBoundsCheck = ((minCol < -50) || (minCol > 50) || (maxCol < -50) || (maxCol > 50) || (minRow < -50) || (minRow > 50) || (maxRow < -50) || (maxRow > 50));
     var minColCheck = (maxCol - minCol < 0);
     var minRowCheck = (maxRow - minRow < 0);
-    if (intCheck) {
+    if (noBlankValuesCheck) {
+        document.getElementById("error").innerHTML = '<h4>Error: one or more input fields are blank</h4>';
+        table = '';
+    }
+    else if (intCheck) {
         document.getElementById("error").innerHTML = '<h4>Error: non-integer entered</h4>';
         table = '';
     }
